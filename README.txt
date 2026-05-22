@@ -1,0 +1,1 @@
+Description: This project applies software development lifecycle (SDLC) principles to plan, design, implement, and evaluate a software solution. It covers requirements analysis, system design, Agile-based iterative development, testing, and deployment — demonstrating end-to-end understanding of how software evolves from concept to production.
