@@ -1,0 +1,27 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+import CourseList from './pages/CourseList';
+import MyCourses from './pages/MyCourses';
+import AdminPanel from './pages/AdminPanel';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<CourseList />} />
+        <Route path="/courses" element={<CourseList />} />
+        <Route path="/my-courses" element={<MyCourses />} />
+        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
