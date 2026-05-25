@@ -3,14 +3,19 @@ import React, { createContext, useState, useContext } from 'react';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    const saved = localStorage.getItem('user');
+    return saved ? JSON.parse(saved) : null; // ✅ rehydrate on load
+  });
 
   const login = (userData) => {
     setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData)); // ✅ persist
   };
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem('user'); // ✅ clear
   };
 
   return (

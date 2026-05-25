@@ -26,16 +26,21 @@ const AdminPanel = () => {
     }
   };
 
-  const fetchEnrollments = (async () => {
+  const fetchEnrollments = async () => {   // ✅ plain async function
     try {
       const response = await axiosInstance.get('/api/enrollments/all', {
-        headers: { Authorization: `Bearer ${user.token}` }
+        headers: { Authorization: `Bearer ${user?.token}` }
       });
       setEnrollments(response.data);
     } catch (error) {
       setMessage('Failed to load enrollments');
     }
-  }, [])
+  };
+
+  useEffect(() => {
+    fetchCourses();
+    fetchEnrollments();
+  }, []); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
