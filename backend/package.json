@@ -1,7 +1,7 @@
 {
   "name": "online-course-registration-system-backend",
   "version": "1.0.0",
-  "description": "Backend for Task Manager App",
+  "description": "Online course registration system backend",
   "main": "server.js",
   "scripts": {
     "test": "mocha",
