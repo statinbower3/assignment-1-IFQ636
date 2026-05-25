@@ -15,7 +15,7 @@ const AdminPanel = () => {
   useEffect(() => {
     fetchCourses();
     fetchEnrollments();
-  }, []);
+  }, [fetchEnrollments]);
 
   const fetchCourses = async () => {
     try {
@@ -26,7 +26,7 @@ const AdminPanel = () => {
     }
   };
 
-  const fetchEnrollments = async () => {
+  const fetchEnrollments = (async () => {
     try {
       const response = await axiosInstance.get('/api/enrollments/all', {
         headers: { Authorization: `Bearer ${user.token}` }
@@ -35,7 +35,7 @@ const AdminPanel = () => {
     } catch (error) {
       setMessage('Failed to load enrollments');
     }
-  };
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
