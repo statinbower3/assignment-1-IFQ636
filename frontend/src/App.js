@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
@@ -10,7 +10,7 @@ import AdminPanel from './pages/AdminPanel';
 
 function App() {
   const { user } = useAuth();
-  
+
   return (
     <Router>
       <Navbar />
