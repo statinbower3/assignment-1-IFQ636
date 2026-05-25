@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -8,6 +9,8 @@ import MyCourses from './pages/MyCourses';
 import AdminPanel from './pages/AdminPanel';
 
 function App() {
+  const { user } = useAuth();
+  
   return (
     <Router>
       <Navbar />
