@@ -15,7 +15,10 @@ function App() {
         <Route path="/" element={<CourseList />} />
         <Route path="/courses" element={<CourseList />} />
         <Route path="/my-courses" element={<MyCourses />} />
-        <Route path="/admin" element={<AdminPanel />} />
+        <Route
+          path="/admin"
+          element={user?.role === 'admin' ? <AdminPanel /> : <Navigate to="/courses" />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
