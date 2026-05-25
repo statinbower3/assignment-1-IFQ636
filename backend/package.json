@@ -1,5 +1,5 @@
 {
-  "name": "task-manager-backend",
+  "name": "online-course-registration-system-backend",
   "version": "1.0.0",
   "description": "Backend for Task Manager App",
   "main": "server.js",
