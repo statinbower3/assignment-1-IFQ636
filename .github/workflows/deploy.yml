@@ -67,21 +67,12 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
-
-          # Debug: check secrets are not empty
-          if [ -z "${{ secrets.EC2_HOST }}" ]; then
-            echo "ERROR: EC2_HOST secret is empty!"
-            exit 1
-          fi
-
-          if [ -z "${{ secrets.EC2_SSH_KEY }}" ]; then
-            echo "ERROR: EC2_SSH_KEY secret is empty!"
-            exit 1
-          fi
-
           echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/deploy_key.pem
           chmod 600 ~/.ssh/deploy_key.pem
-          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+          echo "Key file size: $(wc -c < ~/.ssh/deploy_key.pem) bytes"
+          echo "First line: $(head -1 ~/.ssh/deploy_key.pem)"
+          ssh-keyscan -H "${{ secrets.EC2_HOST }}" >> ~/.ssh/known_hosts 2>&1 || echo "ssh-keyscan failed for host: ${{ secrets.EC2_HOST }}"
+
 
       # Copy backend files (no node_modules)
       - name: Copy backend to EC2
