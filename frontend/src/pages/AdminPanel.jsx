@@ -15,7 +15,7 @@ const AdminPanel = () => {
   useEffect(() => {
     fetchCourses();
     fetchEnrollments();
-  }, [fetchEnrollments]);
+  }, []);
 
   const fetchCourses = async () => {
     try {
