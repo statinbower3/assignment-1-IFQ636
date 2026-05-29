@@ -446,3 +446,17 @@ describe('Courses — DELETE /api/courses/:id', () => {
   });
 
 });
+
+// ─── Intentional failure — demonstrates test catches incorrect behaviour ────
+describe('Auth — Intentional Failure Demo', () => {
+
+  it('should FAIL: wrong status code to demonstrate test failure detection', async () => {
+    const res = await chai.request(app)
+      .post('/api/auth/login')
+      .send({ email: 'nobody@nowhere.com', password: 'wrong' });
+
+    // Intentionally asserting 200 — API returns 401 — this test will fail
+    expect(res).to.have.status(200);
+  });
+
+});
