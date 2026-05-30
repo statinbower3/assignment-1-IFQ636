@@ -2,8 +2,8 @@
 
 A full-stack course registration platform built on the MERN stack (MongoDB, Express.js, React.js, Node.js). Students can browse courses, enrol within capacity limits, and manage their profile. Administrators have a protected panel to create, update, and delete courses, and view all enrolments across the platform.
 
-**Live URL:** http://3.27.199.78  
-**Backend API:** http://3.27.199.78:5001  
+**Live URL:** http://3.106.127.224  
+**Backend API:** http://3.106.127.224:5001  
 **GitHub Repository:** https://github.com/statinbower3/assignment-1-IFQ636
 
 ---
@@ -147,7 +147,7 @@ In `frontend/src/axiosConfig.jsx`, switch the baseURL:
 baseURL: 'http://localhost:5001',
 
 // For production (already set in repo):
-// baseURL: 'http://3.27.199.78:5001',
+// baseURL: 'http://3.106.127.224:5001',
 ```
 
 ### 5. Run in development mode
