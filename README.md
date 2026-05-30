@@ -4,7 +4,7 @@ A full-stack course registration platform built on the MERN stack (MongoDB, Expr
 
 **Live URL:** http://3.27.199.78  
 **Backend API:** http://3.27.199.78:5001  
-**GitHub Repository:** https://github.com/[your-username]/assignment-1-IFQ636
+**GitHub Repository:** https://github.com/statinbower3/assignment-1-IFQ636
 
 ---
 
